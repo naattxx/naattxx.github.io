@@ -11,3 +11,9 @@
     "XELA" 0,
     "YELA" 0;
 }
+
+p {
+  color: gray;
+
+  font-family: Helvetica, Arial, serif;
+}
