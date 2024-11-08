@@ -1,7 +1,7 @@
 .sixtyfour-convergence-header {
   color: red;
 
-  font-family: "Sixtyfour Convergence", sans-serif;
+  font-family: "Sixtyfour Convergence", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -11,14 +11,14 @@
 body {
   background-image: linear-gradient(
     91.2deg,
-    rgba(136, 80, 226, 1) 4%,
-    rgba(16, 13, 91, 1) 96.5%
+    rgb(136, 80, 226) 4%,
+    rgb(16, 13, 91) 96.5%
   );
 }
 
-p {
-  color: gray;
-
+p,
+h1,
+h2 {
   font-family: Helvetica, Arial, serif;
 }
 
@@ -30,6 +30,7 @@ section {
 }
 
 footer {
+  font-family: "Brush Script MT", cursive;
   margin: 0px;
   padding: 5px;
   border-top: solid 2px white;
