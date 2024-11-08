@@ -1,0 +1,27 @@
+.calculator {
+  display: grid;
+  grid-template-areas:
+    "o o o"
+    "n7 n8 n9"
+    "n4 n5 n6"
+    "n1 n2 n3"
+    "n0 n0 n0";
+  gap: 1px;
+  background-color: slategray;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.calculator output {
+  grid-area: o;
+  background-color: darkolivegreen;
+  border: solid 2px black;
+}
+
+.button {
+  grid-area: n;
+}
+
+.b0 {
+  grid-area: n0;
+}
