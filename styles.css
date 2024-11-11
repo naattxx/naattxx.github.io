@@ -23,6 +23,8 @@ h2 {
 }
 
 section {
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
   background-color: rgba(249, 245, 250, 0.8);
   border-radius: 5px;
   padding: 0.5em;
@@ -32,8 +34,12 @@ section {
 footer {
   font-family: "Brush Script MT", cursive;
   margin: 0px;
-  padding: 5px;
+  padding: 1em;
   border-top: solid 2px white;
   background-color: black;
   color: white;
+}
+
+footer > p {
+  font-family: inherit;
 }
