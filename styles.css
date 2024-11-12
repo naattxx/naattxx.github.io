@@ -35,6 +35,10 @@ footer {
   font-family: "Brush Script MT", cursive;
   margin: 0px;
   padding: 1em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   border-top: solid 2px white;
   background-color: black;
   color: white;
