@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Jersey+10&display=swap");
+
 .calculator {
   display: grid;
   grid-template-areas:
@@ -17,8 +19,13 @@
 
 .calculator output {
   grid-area: o;
+  color: ghostwhite;
   background-color: darkolivegreen;
   border: solid 2px black;
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 0px 0.2em;
 }
 
 .calculator button {
