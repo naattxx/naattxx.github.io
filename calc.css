@@ -47,6 +47,13 @@
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
+.dv,
+.ml,
+.mn,
+.pl,
+.sq {
+  color: white;
+}
 .n {
   background-color: lightcyan;
 }
@@ -56,12 +63,15 @@
 }
 .dv {
   grid-area: dv;
+  background-color: crimson;
 }
 .mn {
   grid-area: mn;
+  background-color: lime;
 }
 .pl {
   grid-area: pl;
+  background-color: cornflowerblue;
 }
 .pt {
   grid-area: pt;
@@ -69,9 +79,11 @@
 }
 .sq {
   grid-area: sq;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 .ml {
   grid-area: ml;
+  background-color: coral;
 }
 .eq {
   grid-area: eq;
