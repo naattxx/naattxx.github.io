@@ -47,6 +47,10 @@
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
+.n {
+  background-color: lightcyan;
+}
+
 .n0 {
   grid-area: n0;
 }
@@ -61,6 +65,7 @@
 }
 .pt {
   grid-area: pt;
+  background-color: aliceblue;
 }
 .sq {
   grid-area: sq;
@@ -70,6 +75,7 @@
 }
 .eq {
   grid-area: eq;
+  background-color: burlywood;
 }
 .n1 {
   grid-area: n1;
