@@ -33,10 +33,6 @@ function act(action = lastAction) {
   isFirstType = false;
 }
 
-function equal() {
-  act();
-}
-
 n.forEach((number) => {
   number.addEventListener("click", (e) => {
     handelNumpad(e.target.textContent);
@@ -55,4 +51,6 @@ ml.addEventListener("click", function () {
 dv.addEventListener("click", function () {
   act((x, y) => x / y);
 });
-eq.addEventListener("click", equal);
+eq.addEventListener("click", function () {
+  act();
+});
