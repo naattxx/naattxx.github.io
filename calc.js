@@ -3,6 +3,7 @@ const pl = document.querySelector(".pl");
 const mn = document.querySelector(".mn");
 const ml = document.querySelector(".ml");
 const dv = document.querySelector(".dv");
+const sq = document.querySelector(".sq");
 const eq = document.querySelector(".eq");
 const calcScreen = document.querySelector(".calculator output");
 
@@ -10,6 +11,13 @@ let sum = 0;
 let lastAction = (x, screenContent) => screenContent;
 let isNewInput = false;
 let isFirstType = true;
+
+function getDisplayedNumber() {
+  return Number(calcScreen.textContent);
+}
+function setDisplayedNumber(num) {
+  calcScreen.textContent = String(num);
+}
 
 function handelNumpad(input) {
   const calcText = calcScreen.textContent;
@@ -50,6 +58,10 @@ ml.addEventListener("click", function () {
 });
 dv.addEventListener("click", function () {
   act((x, y) => x / y);
+});
+sq.addEventListener("click", function () {
+  setDisplayedNumber(Math.sqrt(getDisplayedNumber()));
+  isFirstType = false;
 });
 eq.addEventListener("click", function () {
   act();
