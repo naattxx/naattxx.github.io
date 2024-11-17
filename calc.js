@@ -4,6 +4,7 @@ const mn = document.querySelector(".mn");
 const ml = document.querySelector(".ml");
 const dv = document.querySelector(".dv");
 const sq = document.querySelector(".sq");
+const pt = document.querySelector(".pt");
 const eq = document.querySelector(".eq");
 const calcScreen = document.querySelector(".calculator output");
 
@@ -22,11 +23,11 @@ function setDisplayedNumber(num) {
 function handelNumpad(input) {
   const calcText = calcScreen.textContent;
 
-  if (isFirstType) sum = Number(input);
   if (!isNewInput) calcScreen.textContent = input;
   else if (calcText.length <= 10) {
     calcScreen.textContent += input;
   }
+  if (isFirstType) sum = Number(calcScreen.textContent);
 
   isNewInput = true;
 }
@@ -62,6 +63,11 @@ dv.addEventListener("click", function () {
 sq.addEventListener("click", function () {
   setDisplayedNumber(Math.sqrt(getDisplayedNumber()));
   isFirstType = false;
+});
+pt.addEventListener("click", function () {
+  if (calcScreen.textContent.endsWith("."))
+    calcScreen.textContent = String(Number(calcScreen.textContent));
+  else if (!calcScreen.textContent.includes(".")) calcScreen.textContent += ".";
 });
 eq.addEventListener("click", function () {
   act();
