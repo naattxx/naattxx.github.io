@@ -1,1 +1,3 @@
-.codesandbox/
+.cache/
+node_modules/
+public/
