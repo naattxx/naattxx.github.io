@@ -1,6 +1,6 @@
 import * as React from "react";
-import Layout from "../components/layout";
-import { BaseHead } from "../components/head";
+import Layout from "../components/layout.js";
+import { BaseHead } from "../components/head.js";
 import Calculator from "../components/calculator.js";
 import "../styles/styles.css";
 import "../styles/calc.css";
