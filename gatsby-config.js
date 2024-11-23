@@ -3,8 +3,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `SampleSite`,
+    title: `Test Site`,
+    description: `A test site`,
+    author: `naattxx`,
     siteUrl: `https://naattxx.github.io/`,
   },
   plugins: [],
-}
+};

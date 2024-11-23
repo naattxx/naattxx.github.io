@@ -1,6 +1,6 @@
 import * as React from "react";
 import Layout from "../components/layout";
-import { BaseHead } from "../components/head";
+import SEOHead from "../components/head";
 import Calculator from "../components/calculator";
 import "../styles/styles.css";
 import "../styles/calc.css";
@@ -24,7 +24,7 @@ function CalculatorPage() {
 export default CalculatorPage;
 
 export const Head = () => (
-  <BaseHead title="test" discription="A test site">
+  <SEOHead title="Calculator" description="A simple calculator webpage">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -34,5 +34,5 @@ export const Head = () => (
     <noscript>
       You need to enable JavaScript for the calculator to function.
     </noscript>
-  </BaseHead>
+  </SEOHead>
 );
