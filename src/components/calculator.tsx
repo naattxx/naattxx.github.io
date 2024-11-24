@@ -2,15 +2,26 @@ import * as React from "react";
 import { useState } from "react";
 import { useRef } from "react";
 
-function Button({ className, onClick, children }) {
+type ButtonProps = {
+  className?: string;
+  onClick: Function;
+  children: React.ReactNode;
+};
+
+function Button({ className, onClick, children }: ButtonProps) {
   return (
-    <button className={className} onClick={onClick}>
+    <button
+      className={className}
+      onClick={() => {
+        onClick();
+      }}
+    >
       {children}
     </button>
   );
 }
 
-function NumButton({ onClick, children }) {
+function NumButton({ onClick, children }: ButtonProps) {
   return (
     <Button
       className={`n n${children}`}
@@ -23,20 +34,20 @@ function NumButton({ onClick, children }) {
   );
 }
 
-function Screen({ content }) {
+function Screen({ content }: { content: any }) {
   return <output>{content}</output>;
 }
 
 function Calculator() {
   const sum = useRef(0);
   const [lastAction, setLastAction] = useState(
-    () => (x, screenContent) => screenContent
+    () => (_x: any, screenContent: any) => screenContent
   );
   const isFirstType = useRef(false);
   const isFirstInput = useRef(true);
   const [screenText, setScreenText] = useState("0");
 
-  function handelNumpad(input) {
+  function handelNumpad(input: string) {
     if (!isFirstType.current) setScreenText(input);
     else if (screenText.length <= 100) {
       setScreenText(screenText + input);
@@ -83,7 +94,7 @@ function Calculator() {
       <Button
         className="dv"
         onClick={() => {
-          act((x, y) => x / y);
+          act((x: number, y: number): number => x / y);
         }}
       >
         ÷
@@ -91,7 +102,7 @@ function Calculator() {
       <Button
         className="ml"
         onClick={() => {
-          act((x, y) => x * y);
+          act((x: number, y: number): number => x * y);
         }}
       >
         ×
@@ -99,7 +110,7 @@ function Calculator() {
       <Button
         className="mn"
         onClick={() => {
-          act((x, y) => x - y);
+          act((x: number, y: number): number => x - y);
         }}
       >
         -
@@ -107,7 +118,7 @@ function Calculator() {
       <Button
         className="pl"
         onClick={() => {
-          act((x, y) => x + y);
+          act((x: number, y: number): number => x + y);
         }}
       >
         +
@@ -118,14 +129,7 @@ function Calculator() {
       <Button className="sq" onClick={sqrt}>
         √
       </Button>
-      <Button
-        className="eq"
-        onClick={
-          (/*e*/) => {
-            act();
-          }
-        }
-      >
+      <Button className="eq" onClick={act}>
         =
       </Button>
     </div>

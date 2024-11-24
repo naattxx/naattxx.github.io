@@ -1,7 +1,6 @@
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
-module.exports = {
+import type { GatsbyConfig } from "gatsby";
+
+const config: GatsbyConfig = {
   siteMetadata: {
     title: `Test Site`,
     description: `A test site`,
@@ -10,3 +9,5 @@ module.exports = {
   },
   plugins: [],
 };
+
+export default config;

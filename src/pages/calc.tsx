@@ -25,8 +25,6 @@ export default CalculatorPage;
 
 export const Head = () => (
   <SEOHead title="Calculator" description="A simple calculator webpage">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap"
       rel="stylesheet"
