@@ -1,5 +1,4 @@
 import * as React from "react";
-import { HeadProps } from "gatsby";
 import { useSiteMetadata } from "../hooks/use-site-metadata";
 
 type DataProps = {
@@ -7,6 +6,7 @@ type DataProps = {
   description: string;
   children: React.ReactNode;
 };
+
 const Head = ({ title, description, children }: DataProps) => {
   const {
     title: defaultTitle,
