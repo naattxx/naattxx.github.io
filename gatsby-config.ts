@@ -7,6 +7,7 @@ const config: GatsbyConfig = {
     author: `naattxx`,
     siteUrl: `https://naattxx.github.io/`,
   },
+  graphqlTypegen: true,
   plugins: [],
 };
 

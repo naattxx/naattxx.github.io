@@ -12,7 +12,9 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "lint": "eslint --ignore-path .gitignore ",
+    "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
     "@types/node": "^22.9.3",

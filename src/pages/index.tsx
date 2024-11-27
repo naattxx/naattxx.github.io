@@ -1,17 +1,20 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import { Link, graphql, PageProps } from "gatsby";
 import Layout from "../components/layout";
 import SEOHead from "../components/head";
 import "../styles/styles.css";
 
-function IndexPage() {
+function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
   return (
     <Layout>
       <main>
         <section>
-          <h1 className="sixtyfour-convergence-header">NAATTXX</h1>
+          <h1 className="sixtyfour-convergence-header">
+            {data.site?.siteMetadata?.author}
+          </h1>
           <p>
-            <strong>naattxx</strong> is a c++ developer.
+            <strong>{data.site?.siteMetadata?.author}</strong> is a c++
+            developer.
             <br />
             that learns front–end web development.
           </p>
@@ -37,3 +40,13 @@ export const Head = () => (
     />
   </SEOHead>
 );
+
+export const query = graphql`
+  query IndexPage {
+    site {
+      siteMetadata {
+        author
+      }
+    }
+  }
+`;
