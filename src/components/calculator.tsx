@@ -11,7 +11,7 @@ type ButtonProps = {
 function Button({ className, onClick, children }: ButtonProps) {
   return (
     <button
-      className={className}
+      className={`${className} rounded-[1px] px-5 py-1 shadow-[rgba(0,0,0,0.2)_0px_-0.25rem_0px_inset] active:h-[calc(100%-0.125rem)] active:translate-y-0.5 active:shadow-[rgba(0,0,0,0.2)_0px_-0.125rem_0px_inset]`}
       onClick={() => {
         onClick();
       }}
@@ -21,10 +21,10 @@ function Button({ className, onClick, children }: ButtonProps) {
   );
 }
 
-function NumButton({ onClick, children }: ButtonProps) {
+function NumButton({ className, onClick, children }: ButtonProps) {
   return (
     <Button
-      className={`n n${children}`}
+      className={`bg-cyan-50 ${className}`}
       onClick={() => {
         onClick(children);
       }}
@@ -35,13 +35,17 @@ function NumButton({ onClick, children }: ButtonProps) {
 }
 
 function Screen({ content }: { content: any }) {
-  return <output>{content}</output>;
+  return (
+    <output className="col-span-5 overflow-hidden rounded-[1px] border-2 border-solid border-black bg-lime-700 px-2 font-['Jersey_10'] text-4xl leading-normal text-neutral-100">
+      {content}
+    </output>
+  );
 }
 
 function Calculator() {
   const sum = useRef(0);
   const [lastAction, setLastAction] = useState(
-    () => (_x: any, screenContent: any) => screenContent
+    () => (_x: any, screenContent: any) => screenContent,
   );
   const isFirstType = useRef(false);
   const isFirstInput = useRef(true);
@@ -79,36 +83,35 @@ function Calculator() {
   };
 
   return (
-    <div className="calculator">
+    <div className="mx-auto grid w-fit grid-flow-row auto-rows-auto grid-cols-5 gap-px rounded-sm bg-slate-500 p-1 shadow-[rgba(0,0,0,0.4)_0px_2px_4px,rgba(0,0,0,0.3)_0px_7px_13px_-3px,rgba(0,0,0,0.2)_0px_-3px_0px_inset]">
       <Screen content={String(screenText)} />
-      <NumButton onClick={handelNumpad}>1</NumButton>
-      <NumButton onClick={handelNumpad}>2</NumButton>
-      <NumButton onClick={handelNumpad}>3</NumButton>
-      <NumButton onClick={handelNumpad}>4</NumButton>
-      <NumButton onClick={handelNumpad}>5</NumButton>
-      <NumButton onClick={handelNumpad}>6</NumButton>
-      <NumButton onClick={handelNumpad}>7</NumButton>
-      <NumButton onClick={handelNumpad}>8</NumButton>
-      <NumButton onClick={handelNumpad}>9</NumButton>
-      <NumButton onClick={handelNumpad}>0</NumButton>
-      <Button
-        className="dv"
-        onClick={() => {
-          act((x: number, y: number): number => x / y);
-        }}
-      >
-        ÷
+      <div className="col-span-3 row-span-3 grid grid-cols-subgrid gap-px">
+        <NumButton onClick={handelNumpad}>1</NumButton>
+        <NumButton onClick={handelNumpad}>2</NumButton>
+        <NumButton onClick={handelNumpad}>3</NumButton>
+        <NumButton onClick={handelNumpad}>4</NumButton>
+        <NumButton onClick={handelNumpad}>5</NumButton>
+        <NumButton onClick={handelNumpad}>6</NumButton>
+        <NumButton onClick={handelNumpad}>7</NumButton>
+        <NumButton onClick={handelNumpad}>8</NumButton>
+        <NumButton onClick={handelNumpad}>9</NumButton>
+      </div>
+      <NumButton className="col-span-2 col-start-1" onClick={handelNumpad}>
+        0
+      </NumButton>
+      <Button className="col-start-3 bg-blue-50" onClick={point}>
+        .
       </Button>
       <Button
-        className="ml"
+        className="col-start-4 bg-sky-500 text-white"
         onClick={() => {
-          act((x: number, y: number): number => x * y);
+          act((x: number, y: number): number => x + y);
         }}
       >
-        ×
+        +
       </Button>
       <Button
-        className="mn"
+        className="col-start-4 row-start-4 bg-green-400 text-white"
         onClick={() => {
           act((x: number, y: number): number => x - y);
         }}
@@ -116,20 +119,31 @@ function Calculator() {
         -
       </Button>
       <Button
-        className="pl"
+        className="col-start-4 row-start-3 bg-orange-400 text-white"
         onClick={() => {
-          act((x: number, y: number): number => x + y);
+          act((x: number, y: number): number => x * y);
         }}
       >
-        +
+        ×
       </Button>
-      <Button className="pt" onClick={point}>
-        .
+      <Button
+        className="col-start-4 row-start-2 bg-rose-600 text-white"
+        onClick={() => {
+          act((x: number, y: number): number => x / y);
+        }}
+      >
+        ÷
       </Button>
-      <Button className="sq" onClick={sqrt}>
+      <Button
+        className="col-start-5 row-start-2 bg-gray-700 text-white"
+        onClick={sqrt}
+      >
         √
       </Button>
-      <Button className="eq" onClick={act}>
+      <Button
+        className="col-start-5 row-span-3 row-start-3 bg-orange-300"
+        onClick={act}
+      >
         =
       </Button>
     </div>

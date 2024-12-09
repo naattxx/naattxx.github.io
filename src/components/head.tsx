@@ -22,6 +22,7 @@ const Head = ({ title, description, children }: DataProps) => {
 
   return (
     <>
+      <body className="h-screen bg-gradient-to-br from-violet-700 from-40% via-indigo-400 via-90% to-indigo-300" />
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width,initial-scale=1" />
       <title>{seo.title}</title>

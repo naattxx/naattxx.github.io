@@ -1,5 +1,6 @@
 import * as React from "react";
 import Layout from "../components/layout";
+import Section from "../components/section";
 import SEOHead from "../components/head";
 import Calculator from "../components/calculator";
 import "../styles/styles.css";
@@ -9,13 +10,16 @@ function CalculatorPage() {
   return (
     <Layout>
       <main>
-        <section>
-          <h1>This page is under construction.</h1>
-        </section>
-        <section>
-          <h1>A simple calculator.</h1>
+        <Section>
+          <h1 className="text-lg font-semibold">
+            This page is under construction.{" "}
+            <span className="text-2xl">🏗</span>
+          </h1>
+        </Section>
+        <Section>
+          <h1 className="text-xl">A simple calculator.</h1>
           <Calculator />
-        </section>
+        </Section>
       </main>
     </Layout>
   );
