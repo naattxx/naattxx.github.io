@@ -8,7 +8,7 @@ const config: GatsbyConfig = {
     siteUrl: `https://naattxx.github.io/`,
   },
   graphqlTypegen: true,
-  plugins: [],
+  plugins: ["gatsby-plugin-postcss"],
 };
 
 export default config;

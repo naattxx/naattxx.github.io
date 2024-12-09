@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link, graphql, PageProps } from "gatsby";
 import Layout from "../components/layout";
+import Section from "../components/section";
 import SEOHead from "../components/head";
 import "../styles/styles.css";
 
@@ -8,8 +9,8 @@ function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
   return (
     <Layout>
       <main>
-        <section>
-          <h1 className="sixtyfour-convergence-header">
+        <Section>
+          <h1 className="sixtyfour-convergence-header text-3xl">
             {data.site?.siteMetadata?.author}
           </h1>
           <p>
@@ -18,13 +19,18 @@ function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
             <br />
             that learns front–end web development.
           </p>
-        </section>
-        <section>
-          <h2>Links</h2>
+        </Section>
+        <Section>
+          <h2 className="text-lg">Links</h2>
           <p>
-            <Link to="/calc">A calculator!</Link>
+            <Link
+              to="/calc"
+              className="text-blue-500 underline visited:text-violet-600 hover:text-blue-600 hover:visited:text-violet-700 active:no-underline"
+            >
+              A calculator!
+            </Link>
           </p>
-        </section>
+        </Section>
       </main>
     </Layout>
   );
