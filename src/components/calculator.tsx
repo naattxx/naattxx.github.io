@@ -83,7 +83,7 @@ function Calculator() {
   };
 
   return (
-    <div className="mx-auto grid w-fit grid-flow-row auto-rows-auto grid-cols-5 gap-px rounded-sm bg-slate-500 p-1 shadow-[rgba(0,0,0,0.4)_0px_2px_4px,rgba(0,0,0,0.3)_0px_7px_13px_-3px,rgba(0,0,0,0.2)_0px_-3px_0px_inset]">
+    <div className="mx-auto grid w-fit grid-flow-row auto-rows-auto grid-cols-5 gap-px rounded-xs bg-slate-500 p-1 shadow-[rgba(0,0,0,0.4)_0px_2px_4px,rgba(0,0,0,0.3)_0px_7px_13px_-3px,rgba(0,0,0,0.2)_0px_-3px_0px_inset]">
       <Screen content={String(screenText)} />
       <div className="col-span-3 row-span-3 grid grid-cols-subgrid gap-px">
         <NumButton onClick={handelNumpad}>1</NumButton>
