@@ -4,7 +4,7 @@ import { useRef } from "react";
 
 type ButtonProps = {
   className?: string;
-  onClick: Function;
+  onClick: () => void;
   children: React.ReactNode;
 };
 
@@ -21,12 +21,18 @@ function Button({ className, onClick, children }: ButtonProps) {
   );
 }
 
-function NumButton({ className, onClick, children }: ButtonProps) {
+type NumButtonProps = {
+  className?: string;
+  onClick: (value: string) => void;
+  children: React.ReactNode;
+};
+
+function NumButton({ className, onClick, children }: NumButtonProps) {
   return (
     <Button
       className={`bg-cyan-50 ${className}`}
       onClick={() => {
-        onClick(children);
+        onClick(String(children));
       }}
     >
       {children}
@@ -34,7 +40,7 @@ function NumButton({ className, onClick, children }: ButtonProps) {
   );
 }
 
-function Screen({ content }: { content: any }) {
+function Screen({ content }: { content: string | number }) {
   return (
     <output className="col-span-5 overflow-hidden rounded-[1px] border-2 border-solid border-black bg-lime-700 px-2 font-['Jersey_10'] text-4xl leading-normal text-neutral-100">
       {content}
@@ -44,8 +50,8 @@ function Screen({ content }: { content: any }) {
 
 function Calculator() {
   const sum = useRef(0);
-  const [lastAction, setLastAction] = useState(
-    () => (_x: any, screenContent: any) => screenContent,
+  const [lastAction, setLastAction] = useState<(x: number, y: number) => number>(
+    () => (_x: number, y: number) => y,
   );
   const isFirstType = useRef(false);
   const isFirstInput = useRef(true);
